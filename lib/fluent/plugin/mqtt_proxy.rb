@@ -66,6 +66,7 @@ module Fluent::Plugin
         opts[:cert_file] = @security.tls.cert_file
         opts[:key_file] = @security.tls.key_file
       end
+      opts[:assume_publish_response_as_pingresp] = true
 
       init_retry_interval
       @client = MQTT::Client.new(opts)
